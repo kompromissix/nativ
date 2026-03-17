@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-export default function App() {
+export default function App(navigation) {
   return (
     <View style={styles.container_main}>
       <View style={styles.container}>
@@ -22,12 +22,20 @@ export default function App() {
         </View>
         <View style={styles.bottom_main}>
           <View style={styles.bottom}>
-            <View>
-
+            <View style={styles.imgcontiner}>
+              <View style={styles.imgrang}>
+                <Image style={styles.img} source={require('./assets/alert.png')}/>
+              </View>
+              <View style={styles.imgrang2}>
+                <Image style={styles.img2} source={require('./assets/Start.png')}/>
+              </View>
+              <View style={styles.imgrang}>
+                <Image style={styles.img} source={require('./assets/Union.png')}/>
+              </View>
             </View>
-            <View>
-              <Text>Clean</Text>
-              <Text>Enter device</Text>
+            <View style={styles.text_bottom_main}>
+              <Text style={styles.text_bottom1}>Clean</Text>
+              <Text style={styles.text_bottom2}>Enter device</Text>
             </View>
           </View>
         </View>
@@ -50,14 +58,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    width: 375,
+    width: '100%',
     height: 812,
   },
   top_main: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: 375,
+    width: '100%',
     height: 598,
     backgroundColor: '#0181CA',
     borderBottomEndRadius: '40px',
@@ -79,6 +87,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
+    paddingTop: 30,
   },
   top_center:{
     width: 241,
@@ -105,6 +114,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'column',
     width: 375,
     height: 214,
   },
@@ -114,6 +124,50 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    flexDirection: 'column',
   },
+  imgrang:{
+    width: 52,
+    height: 52,
+    display: 'flex', 
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#DDEBF7',
+    borderRadius: 100,
+    marginTop: 15
+  },
+  imgrang2:{
+    width: 74,
+    height: 74,
+    display: 'flex', 
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 100,
+  },
+  imgcontiner: {
+    width: 313,
+    height: 74,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignContent: 'center',
+    flexDirection: 'row',
+  },
+  text_bottom_main: {
+    width: 313,
+    height: 20,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection: 'row'
+  },
+  text_bottom1:{
+    fontSize: 16,
+    color: '#92BEE0'
+  },
+  text_bottom2:{
+    fontSize: 18,
+    color: '#0380C9'
+  }
 });
  
