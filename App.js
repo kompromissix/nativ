@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     width: '100%',
-    height: 812,
+    height: 'auto',
   },
   top_main: {
     display: 'flex',
